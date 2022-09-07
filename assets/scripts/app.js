@@ -6,25 +6,36 @@ function FinalOutput(PrevNumber , operator , calcNumber){
   outputResult(currentResult, calcDescription);
 }
 
-function add() {
+function calculatedOutput (CalculationType){
   const enteredNumber = parseInt(userInput.value);
   const intialNumber = currentResult
-  currentResult = currentResult + enteredNumber
-  FinalOutput(intialNumber, '+' , enteredNumber)
+  let MathOperator;
+  if (CalculationType === 'Add'){
+    currentResult = currentResult + enteredNumber
+    MathOperator = '+'
+  }
+  else if (CalculationType === 'Subtract') {
+    currentResult -= enteredNumber
+    MathOperator = '-'
+  }
+  else {
+    currentResult = currentResult * enteredNumber
+    MathOperator = '*'
+  }
+  
+  FinalOutput(intialNumber, MathOperator , enteredNumber)
+}
+
+function add() {
+  calculatedOutput('Add');
 }
 function subtract(){
-  const enteredNumber = parseInt(userInput.value);
-  const intialNumber = currentResult
-  currentResult = currentResult - enteredNumber
-  FinalOutput(intialNumber, '-' , enteredNumber)
+  calculatedOutput('Subtract');
 }
 
 function multiply(){
-  const enteredNumber = parseInt(userInput.value);
-  const intialNumber = currentResult
-  currentResult = currentResult * enteredNumber
-  FinalOutput(intialNumber, 'x' , enteredNumber)
-
+  calculatedOutput('Multiply');
+  
 }
 
 addBtn.addEventListener('click', add);
