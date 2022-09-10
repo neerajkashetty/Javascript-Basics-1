@@ -6,10 +6,17 @@ function FinalOutput(PrevNumber , operator , calcNumber){
   outputResult(currentResult, calcDescription);
 }
 
+
 function calculatedOutput (CalculationType){
   const enteredNumber = parseInt(userInput.value);
   const intialNumber = currentResult
   let MathOperator;
+  if (CalculationType === 'Add' || 
+    CalculationType === 'Subtract' ||
+    CalculationType === 'Multiply'
+){
+
+
   if (CalculationType === 'Add'){
     currentResult = currentResult + enteredNumber
     MathOperator = '+'
@@ -24,6 +31,7 @@ function calculatedOutput (CalculationType){
   }
   
   FinalOutput(intialNumber, MathOperator , enteredNumber)
+}
 }
 
 function add() {
