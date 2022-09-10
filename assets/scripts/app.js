@@ -10,12 +10,14 @@ function FinalOutput(PrevNumber , operator , calcNumber){
 function calculatedOutput (CalculationType){
   const enteredNumber = parseInt(userInput.value);
   const intialNumber = currentResult
-  let MathOperator;
+  let MathOperator
+  /*  Adding the OR Operator to test and verify the output was the same or Not
+   {In Or if any one of the statement is true then the whole condition is true "its not the case with AND"}*/
+   
   if (CalculationType === 'Add' || 
     CalculationType === 'Subtract' ||
     CalculationType === 'Multiply'
 ){
-
 
   if (CalculationType === 'Add'){
     currentResult = currentResult + enteredNumber
